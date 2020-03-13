@@ -79,12 +79,35 @@ for c in cities:
 # TODO Get latitude and longitude values from the user
 
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+def cityreader_stretch(cities=[]):
   # within will hold the cities that fall within the specified region
     within = []
 
     # TODO Ensure that the lat and lon valuse are all floats
+    user_coord_a = input("Enter coordinates for location a:\n").split(',')
+    user_coord_b = input("Enter coordinates for location b:\n").split(',')
+    if user_coord_a != None and user_coord_b != None:
+        one_a = float(user_coord_a[0])
+        one_b = float(user_coord_a[1])
+        two_a = float(user_coord_b[0])
+        two_b = float(user_coord_b[1])
+    print(
+        user_coord_a, user_coord_b, one_a, one_b, two_a, two_b)
+
     # Go through each city and check to see if it falls within
     # the specified coordinates.
 
     return within
+
+
+which_cities = input(
+    "Would you like to enter a pair of coordinates to see which cities reside in the square with these 2 points in the perpendicular corners?").lower()
+
+yes_ans = ['sure', 'yes', 'yeah', 'y', 'ya']
+
+for resp in which_cities:
+    if resp in yes_ans:
+        cityreader_stretch(cities)
+    else:
+        print("Goodbye")
+        exit(0)
