@@ -84,18 +84,41 @@ def cityreader_stretch(cities=[]):
     within = []
 
     # TODO Ensure that the lat and lon valuse are all floats
-    user_coord_a = input("Enter coordinates for location a:\n").split(',')
-    user_coord_b = input("Enter coordinates for location b:\n").split(',')
+    user_coord_a = input(
+        "Enter coordinates for location a:\n").split(',')
+    user_coord_b = input(
+        "Enter coordinates for location b:\n").split(',')
     if user_coord_a != None and user_coord_b != None:
-        one_a = float(user_coord_a[0])
-        one_b = float(user_coord_a[1])
-        two_a = float(user_coord_b[0])
-        two_b = float(user_coord_b[1])
-    print(
-        user_coord_a, user_coord_b, one_a, one_b, two_a, two_b)
+        one_a = user_coord_a[0]
+        one_b = user_coord_a[1]
+        two_a = user_coord_b[0]
+        two_b = user_coord_b[1]
+
+        # one_a = float(user_coord_a[0])
+        # one_b = float(user_coord_a[1])
+        # two_a = float(user_coord_b[0])
+        # two_b = float(user_coord_b[1])
+
+        lat_range = []
+        lat_range.append(one_a)
+        lat_range.append(two_a)
+        lat_range.sort()
+
+        long_range = []
+        long_range.append(one_b)
+        long_range.append(two_b)
+        long_range.sort()
 
     # Go through each city and check to see if it falls within
     # the specified coordinates.
+    for city in cities:
+        if city.lat in range(int(
+                lat_range[0]), int(lat_range[1])):
+            within.append(city)
+            print(city.lat)
+    # for city in cites:
+    #     for city.lat in range()
+    print('within', within)
 
     return within
 

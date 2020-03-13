@@ -7,10 +7,12 @@
 class GroundVehicle():
     def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
+        pass
 
     # TODO
     def drive(self):
         print("vroooom")
+        return "vroooom"
 
 
 # Subclass Motorcycle from GroundVehicle.
@@ -28,6 +30,7 @@ class Motorcycle(GroundVehicle):
 
     def drive(self):
         print("BRAAAP!!")
+        return "BRAAAP!!"
 
 
 vehicles = [

@@ -40,19 +40,17 @@ class Airplane(FlightVehicle):
     def __init__(self):
         pass
 
-# base class is Vehicle
-
 
 class GroundVehicle(Vehicle):
     def __init__(self):
-    pass
+        pass
 
 
 class Car(GroundVehicle):
     def __init__(self):
-    pass
+        pass
 
 
 class Motorcycle(GroundVehicle):
     def __init__(self):
-    pass
+        pass
